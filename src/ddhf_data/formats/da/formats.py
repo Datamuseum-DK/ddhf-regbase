@@ -1,0 +1,2 @@
+DATE_FORMAT = "j/m-Y"
+DATETIME_FORMAT = "j/m-Y H:i"

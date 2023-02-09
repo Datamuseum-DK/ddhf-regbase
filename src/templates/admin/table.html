@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+{% block title %}
+  {{ table }}
+{% endblock %}
+{% block content %}
+    <table>
+      <tbody>
+        {% for f in headers %}
+          <th>{{ f.verbose_name }}</th>
+        {% endfor %}
+      </tbody>
+      {% for row in table %}
+        <tr>
+            <td> {{ row }} </td> <!-- wont work as i like -->
+        </tr>
+        
+      {% endfor %}
+    </table>
+{% endblock %}
