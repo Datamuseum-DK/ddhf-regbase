@@ -42,7 +42,8 @@ class ItemsAdmin(admin.ModelAdmin):
     list_per_page = 50
     save_on_top = True
     save_as = True
-    fields =('fileid', 'itempicture', 'itemdeleted',
+    readonly_fields = ['itemid']
+    fields = ('itemid', 'fileid', 'itempicture', 'itemdeleted',
              'itemheadline', 'itemdescription', 'itemsize',
              'itemweight', 'itemmodeltype', 'itemserialno',
              'itemdatingfrom', 'itemdatingto',
