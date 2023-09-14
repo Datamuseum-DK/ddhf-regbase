@@ -35,6 +35,8 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", '.localhost 127.0.0.1 [::1]').
 # CSRF_COOKIE_SECURE = True if not DEBUG else False
 # SESSION_COOKIE_SECURE = True if not DEBUG else False
 
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS").split(",")
+
 # Application definition
 
 INSTALLED_APPS = [
