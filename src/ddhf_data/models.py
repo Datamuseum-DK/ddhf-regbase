@@ -25,7 +25,7 @@ def get_tinyname(self):
     image = Image.open(originalname)
     if image.mode not in ("L", "RGB"):
         image = image.convert("RGB")
-    image.thumbnail((40, 40), Image.ANTIALIAS)
+    image.thumbnail((40, 40), Image.LANCZOS)
     image.save(tinyname, 'JPEG', quality=75)
     return format_html(returnurl)
 
@@ -137,13 +137,13 @@ class Pictures(models.Model):
         basename = os.path.basename(filename)
         self.picturemedium.name = u"picturemedium/" + basename
         filenamemedium = os.path.join(settings.MEDIA_ROOT, self.picturemedium.name)
-        image.thumbnail((640, 640), Image.ANTIALIAS)
+        image.thumbnail((640, 640), Image.LANCZOS)
         image.save(filenamemedium, 'JPEG', quality=75)
 
         basename = os.path.basename(filename)
         self.picturelow.name = u"picturelow/" + basename
         filenamelow = os.path.join(settings.MEDIA_ROOT, self.picturelow.name)
-        image.thumbnail((150, 150), Image.ANTIALIAS)
+        image.thumbnail((150, 150), Image.LANCZOS)
         image.save(filenamelow, 'JPEG', quality=75)
         super(Pictures, self).save(*args, **kwargs) # Call the "real" save() method.
 
